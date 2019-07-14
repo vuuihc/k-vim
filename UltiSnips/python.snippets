@@ -181,3 +181,12 @@ snippet dk "api doc"
         code:
 
 endsnippet
+
+snippet csvw "csv write"
+title = ("${1}",)
+with open("${2}", "wb") as file:
+	writer = csv.DictWriter(file, fieldnames=title)
+	writer.writeheader()
+	writer.writerows(${3})
+
+endsnippet
